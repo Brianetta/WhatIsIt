@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Logger;
@@ -214,7 +215,8 @@ public class WhatIsIt extends JavaPlugin {
 		    		targetEntity = other;
     		}
     	}
-    	Block targetBlock = entity.getTargetBlock(null, range);
+    	HashSet<Byte> byteHash = null;
+    	Block targetBlock = entity.getTargetBlock(byteHash, range);
     	if (targetBlock == null) {
     		return targetEntity;
     	} else if (targetEntity == null) {
